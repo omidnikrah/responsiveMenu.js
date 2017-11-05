@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css?family=VT323');
+@import 'layout';
+@mixin transition($speed) {
+	-webkit-transition: all $speed ease-in-out;
+	transition: all $speed ease-in-out;
+}
+
+@mixin userSelect() {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	-ms-user-select: none;
+	    user-select: none;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	outline: 0;
+	text-decoration: none;
+	border: 0;
+	font-family: 'VT323', monospace;
+}
+
+body {
+	background-image: linear-gradient(270deg, #FF8444 0%, #FF3091 100%);
+	padding-bottom: 50px;
+}
+
+#main-content {
+	max-width: 1200px;
+	margin: auto;
+}
+
+.grid {
+	display: flex;
+	flex-flow: row;
+	flex-wrap: wrap;
+}
+.centerAlign{
+	text-align: center;
+}
+
+.toUppercase{
+	text-transform: uppercase;
+}
+
+.btns-submit {
+    padding: 10px !important;
+    text-align: center;
+    background-color: #fff;
+    box-sizing: border-box;
+    font-size: 20px;
+    color: #ff5b6c;
+    border-radius: 5px;
+    margin-left: 15px;
+    margin-top: 20px;
+    font-weight: bold;
+}
