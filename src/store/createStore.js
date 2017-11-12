@@ -3,7 +3,7 @@ import thunk from "redux-thunk";
 import {composeWithDevTools} from 'redux-devtools-extension/developmentOnly';
 import RootReducer from "../reducers";
 
-import { createHistory } from 'history';
+import { createHashHistory } from 'history';
 import { syncHistoryWithStore } from 'react-router-redux';
 
 
@@ -17,7 +17,7 @@ const store = createStore(
 );
 
 
-const history = syncHistoryWithStore(createHistory() , store);
+const history = syncHistoryWithStore(createHashHistory() , store);
 
 export default store;
 

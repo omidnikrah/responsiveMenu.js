@@ -2,16 +2,16 @@ const path = require('path');
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CompressionPlugin = require("compression-webpack-plugin");
 
 
 const VENDOR_LIBS = [
-	'react', 'react-dom'
+	'react', 'react-dom','react-router','react-router-redux'
 ];
 
 const config = {
 	entry: {
 		bundle: './src/App.js',
-		vendor: VENDOR_LIBS
 	},
 	output: {
 		path: path.resolve(__dirname, 'build'),
@@ -83,6 +83,11 @@ const config = {
 			}
 		}),
 		new webpack.optimize.UglifyJsPlugin(),
+		new CompressionPlugin({
+			asset: "[path].gz[query]",
+			algorithm: "gzip",
+			test: /\.(js|html)$/
+		}),
 		new HtmlWebpackPlugin({
 			template: './index.html'
 		})
