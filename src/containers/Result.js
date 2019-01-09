@@ -133,14 +133,14 @@ class Result extends Component {
 }
 		`;	
 		const JS_CODES = `
-$(document).ready(function(){
-	let responsiveHamburgerMenu = '<a id="responsive-menu__js" href="#">'
+$(function(){
+	var responsiveHamburgerMenu = '<a id="responsive-menu__js" href="#">'
 									+'<span class="line line-1"></span>'
 									+'<span class="line line-2"></span>'
 									+'<span class="line line-3"></span>'
 								  +'</a>';
 	$("${menuName}").after(responsiveHamburgerMenu);
-	let responsiveMenu = 0;
+	var responsiveMenu = 0;
 	$('#responsive-menu__js').click(function(e) {
 	   $(this).toggleClass('active');
 	   e.preventDefault();
